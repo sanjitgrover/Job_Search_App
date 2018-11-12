@@ -7,7 +7,7 @@ export default class SelectField extends Component {
   handleBlur = e => {};
 
   render() {
-    const { label, name, options, onchange, value } = this.props;
+    const { name, label, options, onChange, value } = this.props;
 
     return (
       <div className="input-field">
@@ -18,7 +18,7 @@ export default class SelectField extends Component {
           id={name}
           name={name}
           className="input-field__text-input"
-          onChange={onchange}
+          onChange={onChange}
         >
           {options.map(option => (
             <option key={option.label} value={option.value}>

@@ -6,7 +6,7 @@ export default class CheckBoxField extends Component {
   handleBlur = e => {};
 
   render() {
-    const { label, name, onchange, value } = this.props;
+    const { name, label, onChange, value } = this.props;
 
     return (
       <div className="checkbox-field">
@@ -14,7 +14,7 @@ export default class CheckBoxField extends Component {
           id={name}
           name={name}
           type="checkbox"
-          onChange={onchange}
+          onChange={onChange}
           value={value}
         />
         <label htmlFor={name}>{label}</label>

@@ -4,9 +4,9 @@ import TextInputField from "../components/form-elements/TextInputField";
 import CheckBoxField from "../components/form-elements/CheckBoxField";
 import SelectField from "../components/form-elements/SelectField";
 const initialState = {
-  title: "",
-  company: "",
-  salary: "",
+  title: "Job Title",
+  company: "Company Name",
+  salary: 0,
   isRemoteFriendly: "",
   location: ""
 };
@@ -35,15 +35,20 @@ export default class JobCreationForm extends Component {
   state = initialState;
   onChangeHandler = e => {
     const { type, name, value, checked } = e.target;
+
     if (type === "checkbox") {
       this.setState({ [name]: checked });
     } else {
       this.setState({ [name]: value });
     }
   };
+  handleSubmit = e => {
+    e.preventDefault();
+    console.log(this.state);
+  };
   render() {
     return (
-      <form>
+      <form onSubmit={this.handleSubmit}>
         <TextInputField
           name="title"
           label="Title"
@@ -75,6 +80,7 @@ export default class JobCreationForm extends Component {
           onChange={this.onChangeHandler}
           value={this.state.location}
         />
+        <button>Submit Job</button>
       </form>
     );
   }

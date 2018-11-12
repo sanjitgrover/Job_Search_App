@@ -2,11 +2,11 @@ import React, { Component } from "react";
 import "./InputField.css";
 
 export default class TextInputField extends Component {
-  handleFocus = e => {};
+  handleChange = e => {};
   handleBlur = e => {};
 
   render() {
-    const { label, name, onchange, value } = this.props;
+    const { name, label, onChange, value } = this.props;
 
     return (
       <div className="input-field">
@@ -18,8 +18,8 @@ export default class TextInputField extends Component {
           name={name}
           type="text"
           className="input-field__text-input"
-          onChange={onchange}
-          value={value}
+          onChange={onChange}
+          placeHolder={value}
         />
       </div>
     );
