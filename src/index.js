@@ -10,8 +10,11 @@ import "./styles.css";
 function App() {
   return (
     <div className="App">
+      My Job search App
       <JobCreationForm />
-      {jobs.map(job => <JobItem key={job.id} {...job} />)}
+      {jobs.map(job => (
+        <JobItem key={job.id} {...job} />
+      ))}
     </div>
   );
 }
